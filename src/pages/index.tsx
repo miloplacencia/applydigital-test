@@ -1,7 +1,11 @@
 export default function Index() {
   return (
-    <div className="App">
-      <h1>Index</h1>
+    <div id="index" className="grid">
+      <div className="" style={{ height: 50, background: "#DDD" }}></div>
+      <div className="" style={{ height: 50, background: "#DDD" }}></div>
+      <div className="" style={{ height: 50, background: "#DDD" }}></div>
+      <div className="" style={{ height: 50, background: "#DDD" }}></div>
+      <div className="" style={{ height: 50, background: "#DDD" }}></div>
     </div>
   );
 }

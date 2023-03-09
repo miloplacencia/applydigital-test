@@ -23,6 +23,7 @@ header {
 }
 
 .navigation-container {
+  margin-bottom: 2.375rem;
 }
 .navigation-container nav {
   margin-left: auto;
@@ -50,4 +51,17 @@ header {
 }
 .navigation-container nav a:last-of-type {
   border-radius: 0 2px 2px 0;
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.875rem 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
