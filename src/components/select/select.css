@@ -1,0 +1,73 @@
+.select-container {
+  width: 15rem;
+  max-width: 100%;
+  position: relative;
+}
+.select-container > button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 400;
+  height: 34px;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  position: relative;
+  text-align: left;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  width: 100%;
+}
+.select-container > button > span {
+  display: flex;
+  align-items: center;
+}
+.select-container > button > span svg {
+  margin-right: 0.8rem;
+}
+
+.select-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  display: none;
+  box-shadow: 0 2px 2px 0 #dad8d8;
+  background-color: #fff;
+}
+.select-container ul.active {
+  display: block;
+}
+.select-container ul button {
+  background-color: #fff;
+  border: 0;
+  border-radius: 0;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  height: 34px;
+  line-height: 1.42857;
+  padding: 0.625rem 0.688rem;
+  position: relative;
+  text-align: left;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  width: 100%;
+}
+
+.select-container ul button svg {
+  margin-right: 0.8rem;
+}
+
+.select-container ul button:hover {
+  background-color: #eaeaea;
+}
