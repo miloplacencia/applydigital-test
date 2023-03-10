@@ -7,6 +7,7 @@ export function ReactIcon(props: SVGProps<SVGSVGElement>) {
       width="1em"
       height="1em"
       viewBox="0 0 32 32"
+      aria-testid="reactjs"
       {...props}
     >
       <circle cx="16" cy="15.974" r="2.5" fill="#00d8ff"></circle>

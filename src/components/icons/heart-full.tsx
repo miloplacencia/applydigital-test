@@ -7,6 +7,7 @@ export function HeartFullIcon(props: SVGProps<SVGSVGElement>) {
       width="1em"
       height="1em"
       viewBox="0 0 256 256"
+      data-testid="heart-full"
       {...props}
     >
       <path
