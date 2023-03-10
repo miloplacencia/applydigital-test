@@ -12,12 +12,12 @@ export default function CardComponent({
   author = "Author",
   onClickLike,
 }: {
-  liked?: boolean;
-  title?: string;
-  date?: Date;
-  author?: string;
-  link?: string;
-  onClickLike?: () => void;
+  liked: boolean;
+  title: string;
+  date: Date;
+  author: string;
+  link: string | null;
+  onClickLike: () => void;
 }) {
   const formattedDate = date ? relativeDate(new Date(date)) : "";
 
@@ -27,12 +27,16 @@ export default function CardComponent({
         <div className="card-date">
           <ClockIcon height="1rem" width="1rem" />
           <span>
-            {formattedDate} by {author}
+            {formattedDate} ago by {author}
           </span>
         </div>
         <p className="card-text">
-          <a href={link} rel="noopener noreferrer" target="_blank">
-            {title}
+          <a
+            {...(link && { href: link })}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            {title ? title : <em>No Title</em>}
           </a>
         </p>
       </div>
