@@ -59,6 +59,8 @@ function App({ children }: { children: JSX.Element }) {
             articles,
             loading,
             selectedOption,
+            fetch: (page: number) =>
+              selectedOption && fetchData(selectedOption, { page }),
           }}
         >
           {children}

@@ -1,18 +1,22 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 
 import CardComponent from "../components/card/card";
 import { LoadingIcon } from "../components/icons/loading";
+import InfinityScroll from "../components/infinityscroll/infinity";
 
 import useLikes from "../hooks/likes";
 import StoreContext from "../hooks/store";
 
 export default function Index() {
-  const { articles, loading } = useContext(StoreContext);
-  const { likes, updateLikes, isLiked } = useLikes();
+  const { articles, loading, fetch } = useContext(StoreContext);
+  const { updateLikes, isLiked } = useLikes();
+
+  const root = useRef<HTMLDivElement>(null);
 
   return (
-    <div id="index" className="grid">
+    <div id="index" className="grid" ref={root}>
       {loading && <LoadingIcon width={48} height={48} />}
+
       {articles.list?.map((article) => (
         <CardComponent
           key={article.objectID}
@@ -24,6 +28,8 @@ export default function Index() {
           onClickLike={() => updateLikes(article)}
         />
       ))}
+
+      {!loading && <InfinityScroll fetch={() => fetch(articles.page + 1)} />}
     </div>
   );
 }
