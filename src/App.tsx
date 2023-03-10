@@ -42,7 +42,9 @@ function App({ children }: { children: JSX.Element }) {
   return (
     <div className="app">
       <header>
-        <div className="container"></div>
+        <div className="container">
+          <img src="./logo.svg" />
+        </div>
       </header>
       <main className="container">
         <div className="navigation-container">
