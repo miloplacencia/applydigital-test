@@ -8,14 +8,15 @@ import useLikes from "../hooks/likes";
 import StoreContext from "../hooks/store";
 
 export default function Index() {
-  const { articles, loading, fetch } = useContext(StoreContext);
+  const { articles, loading, fetch, selectedOption } = useContext(StoreContext);
   const { updateLikes, isLiked } = useLikes();
 
   const root = useRef<HTMLDivElement>(null);
 
   return (
     <div id="index" className="grid" ref={root}>
-      {loading && <LoadingIcon width={48} height={48} />}
+      {!selectedOption && <em>Select one news source in the select</em>}
+      {selectedOption && loading && <LoadingIcon width={48} height={48} />}
 
       {articles.list?.map((article) => (
         <CardComponent
